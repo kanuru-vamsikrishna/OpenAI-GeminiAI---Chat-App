@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const HomePage = () => {
   return (
     <div className="homePage">
+      <img src="/orbital.png" alt="" className="orbital" />
       <div className="left">
         <h1>KVK OG AI Chat</h1>
         <h2>Super charge your creativity and productivity with KVK OG Chat</h2>
@@ -12,7 +13,13 @@ const HomePage = () => {
         <Link to="/dashboard">Get Started</Link>
       </div>
       <div className="right">
-        
+        <div className="imgContainer">
+          <div className="bgContainer">
+            <div className="bg">
+              <img src="/bot.png" alt="" className="bot" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
