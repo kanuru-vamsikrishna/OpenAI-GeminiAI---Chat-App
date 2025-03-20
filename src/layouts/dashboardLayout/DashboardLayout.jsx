@@ -1,6 +1,8 @@
 import { useAuth } from '@clerk/clerk-react'
 import React, { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+import ChatList from '../../components/ChatList/ChatList';
+import "./dashboardLayout.css"
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ const DashboardLayout = () => {
 
   return (
     <div className="dashboardLayout">
-      <div className="menu">MENU</div>
+      <div className="menu"><ChatList /></div>
       <div><Outlet /></div>
     </div>
   )
