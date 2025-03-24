@@ -35,9 +35,9 @@ const ChatList = () => {
       <hr/>
       <div className="upgrade">
         <img src="/logo.png" alt="" />
-        <div>
+        <div className='text'>
           <span>Upgrade to KVK OG AI pro</span>
-          <span>Get unlimited access to all features</span>
+          <span>get unlimited access to all features</span>
         </div>
       </div>
     </div>
