@@ -21,7 +21,13 @@
   .list {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: scroll; /* Enables scrolling */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
+   }
+
+  .list::-webkit-scrollbar {
+      display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
   }
 
   a {
