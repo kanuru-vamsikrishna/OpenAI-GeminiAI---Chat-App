@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   .wrapper {
     flex: 1;
@@ -11,6 +12,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
+
+    .wrapper::-webkit-scrollbar {
+      display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
+  }
 
     .chat {
       width: 50%;

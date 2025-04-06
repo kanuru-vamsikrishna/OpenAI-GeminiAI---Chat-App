@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './chatPage.css'
+import NewPrompt from '../../components/newPrompt/NewPrompt'
 
 const ChatPage = () => {
+
   return (
     <div className="chatPage">
       <div className="wrapper">
@@ -29,6 +31,7 @@ const ChatPage = () => {
           <div className="message user">Test message from user</div>
           <div className="message">Test message from ai</div>
           <div className="message user">Test message from user</div>
+          <NewPrompt />
         </div>
       </div>
     </div>
