@@ -14,15 +14,16 @@ const authenticator = async () => {
     }
 
     const data = await response.json()
-    const { signature, expiry, token } = data;
-    return { signature, expiry, token }
+    const { signature, expire, token } = data;
+    return { signature, expire, token }
   } catch (error) {
     throw new Error(`Authentication request failed: ${error.message}`)
   }
   
 };
 
-const Upload = () => {
+const Upload = (props) => {
+  const { setImage } = props;
 
   const onError = (err) => {
     console.log("Error", err)
@@ -30,15 +31,18 @@ const Upload = () => {
 
   const onSuccess = (res) => {
     console.log("Success", res)
+    setImage((prev) => ({...prev, isLoading: false, dbData: res}))
+
   }
 
-  // const onError = (err) => {
-  //   console.log("Error", err)
-  // }
+  const onUploadProgress = (progress) => {
+    console.log("Progress", progress)
+  }
 
-  // const onError = (err) => {
-  //   console.log("Error", err)
-  // }
+  const onUploadStart = (evt) => {
+    console.log("Start", evt)
+    setImage((prev) => ({...prev, isLoading: true}))
+  }
 
   return (
     <IKContext urlEndpoint={urlEndpoint} publicKey={publicKey} authenticator={authenticator}>
@@ -46,6 +50,9 @@ const Upload = () => {
         fileName="test-upload.png"
         onError={onError}
         onSuccess={onSuccess}
+        useUniqueFileName={true}
+        onUploadProgress={onUploadProgress}
+        onUploadStart={onUploadStart}
       />
   </IKContext>
   )
