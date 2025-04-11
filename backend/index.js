@@ -1,12 +1,14 @@
 const express = require("express")
 const ImageKit = require("imagekit");
+const cors = require("cors");
 
 const port = process.env.PORT || 3000;
 
 const app = express()
 
-// SDK initialization
-
+app.use(cors({
+  origin: process.env.CLIENT_URL
+}));
 
 const imageKit = new ImageKit({
     publicKey : process.env.IMAGE_KIT_PUBLIC_KEY,
